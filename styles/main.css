@@ -1,0 +1,13 @@
+
+
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.form-wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10;
+    padding-right: 10;
+    max-width: 1200px;
+}
