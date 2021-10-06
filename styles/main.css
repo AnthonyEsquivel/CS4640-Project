@@ -150,20 +150,20 @@ h1, h2, h3, h4, h5 {
 .popup {
     position: relative;
     display: inline-block;
-  }
+}
   
-  .popup .popuptext {
+.popup .popuptext {
     visibility: hidden;
     width: 200px;
     background-color: grey;
-    color: #fff;
+    color: white;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
     position: relative;
     z-index: 1;
-  }
+}
   
-  .popup:hover .popuptext {
+.popup:hover .popuptext {
     visibility: visible;
-  }
+}
