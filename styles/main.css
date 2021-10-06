@@ -53,6 +53,10 @@ h1, h2, h3, h4, h5 {
     all: revert;
 }
 
+.navbar-custom {
+    background-color: rgb(0, 0, 100);
+}
+
 .copyright {
     float: left;
 }
@@ -101,4 +105,26 @@ h1, h2, h3, h4, h5 {
 
 .carousel {
     width: 100%; 
+}
+
+.exec-card-title {
+    text-decoration: underline;
+}
+
+.btn {
+    margin-top: 15px;
+    background-color: white;
+    color: black;
+    border: 2px solid blue !important;
+    transition-duration: 0.3s;
+}
+  
+.btn:hover {
+    background-color: blue;
+    color: white !important;
+}
+
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
