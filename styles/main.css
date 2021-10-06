@@ -140,3 +140,24 @@ h1, h2, h3, h4, h5 {
 .join-link:hover {
     text-decoration: underline;
 }
+
+.popup {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .popup .popuptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: grey;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .popup:hover .popuptext {
+    visibility: visible;
+  }
