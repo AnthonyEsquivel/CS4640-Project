@@ -42,27 +42,27 @@
                 <form action="form_action.php" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name:</label>
-                        <input type="text" class="form-control" id="name">
+                        <input name="name" type="text" class="form-control" id="name">
                     </div>
                     <div class="form-group">
                         <label for="cid">Computing ID:</label>
-                        <input type="text" class="form-control" id="cid">
+                        <input name="cid" type="text" class="form-control" id="cid">
                     </div>
                     <div class="form-group">
                         <label for="phone_num">Phone Number:</label>
-                        <input type="number" class="form-control" id="phone_num">
+                        <input name="phone_num" type="number" class="form-control" id="phone_num">
                     </div>
                     <div class="form-group">
                         <label for="drive">Can you drive?</label>
-                        <select class="form-control" id="drive">
+                        <select name="drive" class="form-control" id="drive">
                             <option>No</option>
                             <option>Yes</option>
                             <option>Yes, and I have space for pads too!</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="activities">Please select all of the activities you have experience with</label>
-                        <select multiple class="form-control" id="activities">
+                        <label class="form-label select-label">Please select all of the activities you have experience with</label>
+                        <select multiple name="activities[]" class="form-control" id="activities">
                             <option>Bouldering</option>
                             <option>Top Rope Climbing</option>
                             <option>Top Rope Belaying</option>
@@ -73,13 +73,13 @@
                     </div>
                     <div class="form-group">
                         <label for="gear">Can you provide your own camping gear?</label>
-                        <select class="form-control" id="gear">
+                        <select name="gear" class="form-control" id="gear">
                             <option>Yes</option>
                             <option>No</option>
                         </select>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
+                        <label><input name="remember" type="checkbox"> Remember me</label>
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                 </form>
@@ -87,7 +87,7 @@
         </div>
     </div>
 
-
+    
     <!--Footer-->
     <footer class="container foot row col-12">
         <small class=copyright>Copyright 2021 Anthony Esquivel and Tyler Clift. </small>
