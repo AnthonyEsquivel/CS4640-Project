@@ -11,12 +11,24 @@
         header("Location: login.php");
         exit();
     }
+
+    $res = $mysqli->query("select * from trips");
+    if ($res === false) {
+        die("MySQL database failed");
+    }
+    $data = $res->fetch_all(MYSQLI_ASSOC);
+    if (!isset($data[0])) {
+        die("No trips in the database");
+    }
+    
     
     // set user information for the page
     $user = [
         "name" => $_SESSION["name"],
         "email" => $_SESSION["email"]
         ];
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -59,52 +71,17 @@
     <div class="card container col-12">
         <div class="card-body">
             <h2 class="card-title">Trip Signup</h2>
-            <div class="form-wrapper">
-                <form action="form_action.php" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input name="name" type="text" class="form-control" id="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="cid">Computing ID:</label>
-                        <input name="cid" type="text" class="form-control" id="cid">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone_num">Phone Number:</label>
-                        <input name="phone_num" type="number" class="form-control" id="phone_num">
-                    </div>
-                    <div class="form-group">
-                        <label for="drive">Can you drive?</label>
-                        <select name="drive" class="form-control" id="drive">
-                            <option>No</option>
-                            <option>Yes</option>
-                            <option>Yes, and I have space for pads too!</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label select-label">Please select all of the activities you have experience with</label>
-                        <select multiple name="activities[]" class="form-control" id="activities">
-                            <option>Bouldering</option>
-                            <option>Top Rope Climbing</option>
-                            <option>Top Rope Belaying</option>
-                            <option>Lead Climbing</option>
-                            <option>Lead Belaying</option>
-                            <option>Cleaning a Route</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="gear">Can you provide your own camping gear?</label>
-                        <select name="gear" class="form-control" id="gear">
-                            <option>Yes</option>
-                            <option>No</option>
-                        </select>
-                    </div>
-                    <div class="checkbox">
-                        <label><input name="remember" type="checkbox"> Remember me</label>
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
+            
+            <?php foreach ($data as $trip) : ?>
+                <div class="card-body">
+                    <h3 class="card-title"><?= $trip['name'] ?></h3>
+                    <h5>Location: <?= $trip['location'] ?></h5>
+                    <h5>Dates: <?= $trip['dates'] ?></h5>
+                    <p><?= $trip['description'] ?></p>
+
+                </div>
+            <?php endforeach ?>
+
         </div>
     </div>
 
