@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5 {
     text-decoration: underline;
 }
 
-.btn {
+.btn-responsive {
     margin-top: 15px;
     background-color: white;
     color: black;
@@ -129,7 +129,7 @@ h1, h2, h3, h4, h5 {
     transition-duration: 0.3s;
 }
   
-.btn:hover {
+.btn-responsive:hover {
     background-color: blue;
     color: white !important;
 }

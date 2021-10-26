@@ -21,12 +21,31 @@
         die("No trips in the database");
     }
     
+    if (isset($_POST["userid"])) {
+        echo($_POST["userid"]);
+        //TODO: add to join table here
+    }
     
     // set user information for the page
-    $user = [
-        "name" => $_SESSION["name"],
-        "email" => $_SESSION["email"]
-        ];
+    $stmt = $mysqli->prepare("select id from user where email = ?;");
+    $stmt->bind_param("s", $_SESSION["email"]);
+    $stmt->execute();      
+    $id_res = $stmt->get_result();      
+    if ($id_res === false) {
+        die("MySQL database failed");
+    }
+    $id_data = $id_res->fetch_all(MYSQLI_ASSOC);
+    if (!isset($id_data[0])) {
+        die("No id found");
+    }
+    foreach ($id_data[0] as $val){
+        $user = [
+            "name" => $_SESSION["name"],
+            "email" => $_SESSION["email"],
+            "id" => $val
+            ];
+        break;
+    }
 
     
 ?>
@@ -71,14 +90,17 @@
     <div class="card container col-12">
         <div class="card-body">
             <h2 class="card-title">Trip Signup</h2>
-            
+            <a href="login.php" class="btn btn-danger">Log out</a>
             <?php foreach ($data as $trip) : ?>
                 <div class="card-body">
                     <h3 class="card-title"><?= $trip['name'] ?></h3>
                     <h5>Location: <?= $trip['location'] ?></h5>
                     <h5>Dates: <?= $trip['dates'] ?></h5>
                     <p><?= $trip['description'] ?></p>
-
+                    <form action="trips.php" method="post">
+                        <input type="hidden" name="userid" value="<?=$user["id"]?>"/>
+                        <button type="submit" class="btn btn-responsive">Sign Up</button>
+                    </form>
                 </div>
             <?php endforeach ?>
 
