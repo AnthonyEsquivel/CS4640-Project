@@ -40,7 +40,7 @@ if (isset($_POST["email"])) { /// validate the email coming in
             // validate the user's password
             if (password_verify($_POST["password"], $data[0]["password"])) {
                 // Save user information into the session to use later
-                $_SESSION["name"] = $data[0]["name"];
+                // $_SESSION["name"] = $data[0]["name"];
                 $_SESSION["email"] = $data[0]["email"];
                 header("Location: trips.php");
                 exit();
@@ -51,17 +51,19 @@ if (isset($_POST["email"])) { /// validate the email coming in
         } else {
             // user was not found, create an account
             // NEVER store passwords into the database, use a secure hash instead:
+            
             $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-            $insert = $mysqli->prepare("insert into user (name, email, password) values (?, ?, ?);"); //add elements to database
-            $insert->bind_param("sss", $_POST["name"], $_POST["email"], $hash);
+            $insert = $mysqli->prepare("insert into user (email, password) values (?, ?);"); //add elements to database
+            $insert->bind_param("ss", $_POST["email"], $hash);
             if (!$insert->execute()) {
                 $error_msg = "Error creating new user";
             } 
             
             // Save user information into the session to use later
-            $_SESSION["name"] = $_POST["name"];
+            // $_SESSION["name"] = $_POST["name"];
             $_SESSION["email"] = $_POST["email"];
-            header("Location: trips.php");
+            header("Location: register.php");
+            // header("Location: trips.php");
             exit();
         }
     }
@@ -117,15 +119,11 @@ if (isset($_POST["email"])) { /// validate the email coming in
                             <input type="email" class="form-control" id="email" name="email"/>
                         </div>
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name"/>
-                        </div>
-                        <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password" name="password"/>
                         </div>
                         <div class="text-center">                
-                            <button type="submit" class="btn btn-primary">Log in / Create Account</button>
+                            <button type="submit" class="btn btn-primary">Log in</button>
                         </div>
                     </form>
                 </div>

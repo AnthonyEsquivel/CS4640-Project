@@ -8,14 +8,14 @@
     $db->query("create table user (
         id int not null auto_increment,
         email text not null,
-        name text not null,
         password text not null,
-        uid int not null,
-        is_driver boolean not null,
-        experience text not null,
-        num_pads int not null,
-        num_passengers int not null,
-        has_gear boolean not null,
+        name text,
+        uid int,
+        is_driver text,
+        experience text,
+        num_pads int,
+        num_passengers int,
+        has_gear text,
         primary key (id));");   
     
 
@@ -30,10 +30,8 @@
         primary key (id));");   
 
 
-    // $stmt1 = $db->prepare("insert into general_knowledge_question (question, answer, points) values (?,?,?);");
-    // foreach($general_knowledge["results"] as $qn) {
-    //     $stmt1->bind_param("ssi", $qn["question"], $qn["correct_answer"], $points);
-    //     if (!$stmt1->execute()) {
-    //         echo "Could not add question: {$qn["question"]}\n";
-    //     }
-    // }
+    $stmt1 = $db->prepare("insert into trips (name, location, type, description, dates) values ('nrg trip','new river gorge','lead/toprope/boulder','come to the new with us!','9/10-9/13');");
+    if (!$stmt1->execute()) {
+        echo "Could not add question: {$qn["question"]}\n";
+    }
+    
