@@ -26,7 +26,7 @@
         location text not null,
         type text not null,
         description text not null,
-        datestext not null,
+        dates text not null,
         primary key (id));");   
 
 

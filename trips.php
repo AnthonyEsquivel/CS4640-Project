@@ -1,3 +1,24 @@
+<?php
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
+    //$mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
+    $mysqli = new mysqli("localhost", "root", "", "climbing_team"); 
+    
+    $user = null;
+    
+    session_start();
+    
+    if (!isset($_SESSION["email"])) {
+        header("Location: login.php");
+        exit();
+    }
+    
+    // set user information for the page
+    $user = [
+        "name" => $_SESSION["name"],
+        "email" => $_SESSION["email"]
+        ];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,13 +48,13 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="calendar.html">Calendar</a></li>
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="trips.html">Trips</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="trips.php">Trips</a></li>
                     <li class="nav-item"><a class="nav-link" href="resources.html">Resources</a></li>
                     <li class="nav-item"><a class="nav-link" href="join.html">Join</a></li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
 
     <div class="card container col-12">
         <div class="card-body">
