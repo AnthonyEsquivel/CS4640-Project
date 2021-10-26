@@ -32,11 +32,16 @@
     $db->query("drop table if exists user_trips;");
     $db->query("create table user_trips (
         user_id int not null,
-        question_id int not null);");
+        trip_id int not null);");
 
 
-    $stmt1 = $db->prepare("insert into trips (name, location, type, description, dates) values ('nrg trip','new river gorge','lead/toprope/boulder','come to the new with us!','9/10-9/13');");
+    $stmt1 = $db->prepare("insert into trips (name, location, type, description, dates) values ('The New River Gorge trip','Fayettville, Wv','lead/toprope/boulder','Week longao giaghoahpgapudfhasdfh','9/10-9/13');");
     if (!$stmt1->execute()) {
-        echo "Could not add question: {$qn["question"]}\n";
+        echo "Could not add trip";
+    }
+
+    $stmt2 = $db->prepare("insert into trips (name, location, type, description, dates) values ('Crimpers Comp (USAC)','Christiansburg, VA','boulder','come to the new with us!','9/10-9/13');");
+    if (!$stmt2->execute()) {
+        echo "Could not add trip";
     }
     
