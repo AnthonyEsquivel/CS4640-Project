@@ -29,6 +29,11 @@
         dates text not null,
         primary key (id));");   
 
+    $db->query("drop table if exists user_trips;");
+    $db->query("create table user_trips (
+        user_id int not null,
+        question_id int not null);");
+
 
     $stmt1 = $db->prepare("insert into trips (name, location, type, description, dates) values ('nrg trip','new river gorge','lead/toprope/boulder','come to the new with us!','9/10-9/13');");
     if (!$stmt1->execute()) {

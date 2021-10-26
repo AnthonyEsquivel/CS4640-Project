@@ -15,8 +15,7 @@ $error_msg = "";
 // Join the session or start a new one
 session_start();
 
-$experience_string = "";
-
+$experience_string = ""; // used to turn array into string for db storage
 // Check if options are selected
 if(isset($_POST["experience"])){
     foreach ($_POST["experience"] as $element)
@@ -39,9 +38,11 @@ $_SESSION["num_pads"] = $_POST["num_pads"];
 $_SESSION["num_passengers"] = $_POST["num_passengers"];
 $_SESSION["has_gear"] = $_POST["has_gear"];
 
-// header("Location: trips.php");
-// exit();
-        
+// $check = $mysqli->;
+// if ($insert){
+//     header("Location: trips.php");
+//     exit();
+// }
 ?>
 
 <!DOCTYPE html>
