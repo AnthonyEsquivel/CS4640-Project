@@ -35,13 +35,17 @@
         trip_id int not null);");
 
 
-    $stmt1 = $db->prepare("insert into trips (name, location, type, description, dates) values ('The New River Gorge trip','Fayettville, Wv','lead/toprope/boulder','Week longao giaghoahpgapudfhasdfh','9/10-9/13');");
+    $stmt1 = $db->prepare("insert into trips (name, location, type, description, dates) values ('The New River Gorge trip','Fayettville, Wv','lead/toprope/boulder','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','9/10-9/13');");
     if (!$stmt1->execute()) {
         echo "Could not add trip";
     }
 
-    $stmt2 = $db->prepare("insert into trips (name, location, type, description, dates) values ('Crimpers Comp (USAC)','Christiansburg, VA','boulder','come to the new with us!','9/10-9/13');");
+    $stmt2 = $db->prepare("insert into trips (name, location, type, description, dates) values ('Crimpers Comp (USAC)','Christiansburg, VA','boulder','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','9/10-9/13');");
     if (!$stmt2->execute()) {
         echo "Could not add trip";
     }
     
+    $stmt3 = $db->prepare("insert into trips (name, location, type, description, dates) values ('Slaughter Competition','Charlottesville, VA','boulder','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','11/2');");
+    if (!$stmt3->execute()) {
+        echo "Could not add trip";
+    }

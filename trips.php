@@ -23,7 +23,7 @@
         die("MySQL database failed");
     }
     $name_data = $name_res->fetch_all(MYSQLI_ASSOC);
-    if ($name_data[0] == NULL) {
+    if ($name_data[0]["name"] == NULL) {
         header("Location: register.php");
     }
 

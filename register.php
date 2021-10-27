@@ -103,7 +103,6 @@ if(isset($_POST["name"])){
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name"/>
                         </div>
-                    
                         <div class="mb-3">
                             <label for="uid" class="form-label">UID</label>
                             <input type="number" class="form-control" id="uid" name="uid"/>
@@ -116,15 +115,15 @@ if(isset($_POST["name"])){
                             </select>
                         </div>
                         <div class="mb-3">
-                        <label for ="experience">Please select all of the activities you have experience with</label>
-                        <select multiple name="experience[]" class="form-control" id="experience" size = 6>
-                            <option value="bouldering">Bouldering</option>
-                            <option value="trclimbing">Top Rope Climbing</option>
-                            <option value="trbelaying">Top Rope Belaying</option>
-                            <option value="leadclimbing">Lead Climbing</option>
-                            <option value="leadbelaying">Lead Belaying</option>
-                            <option value="cleaning">Cleaning a Route</option>
-                        </select>
+                            <label for ="experience">Please select all of the activities you have experience with</label>
+                            <select multiple name="experience[]" class="form-control" id="experience" size = 6>
+                                <option value="bouldering">Bouldering</option>
+                                <option value="trclimbing">Top Rope Climbing</option>
+                                <option value="trbelaying">Top Rope Belaying</option>
+                                <option value="leadclimbing">Lead Climbing</option>
+                                <option value="leadbelaying">Lead Belaying</option>
+                                <option value="cleaning">Cleaning a Route</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="num_pads" class="form-label">How many pads can you fit in your vehicle?</label>
