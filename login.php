@@ -40,7 +40,17 @@ if (isset($_POST["email"])) { /// validate the email coming in
             // validate the user's password
             if (password_verify($_POST["password"], $data[0]["password"])) {
                 // Save user information into the session to use later
-                // $_SESSION["name"] = $data[0]["name"];
+
+                $stmt5 = $mysqli->prepare("select name from user where email = ?;");
+                $stmt5->bind_param("s", $data[0]["email"]);
+                $stmt5->execute();      
+                $name_res = $stmt5->get_result();      
+                if ($name_res === false) {
+                    die("MySQL database failed");
+                }
+                $name_data = $name_res->fetch_all(MYSQLI_ASSOC);
+
+                $_SESSION["name"] = $name_data[0]["name"];
                 $_SESSION["email"] = $data[0]["email"];
                 header("Location: trips.php");
                 exit();
