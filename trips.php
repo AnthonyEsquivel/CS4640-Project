@@ -86,6 +86,12 @@
     }
 
     add_trips_to_user();
+
+    function convert_trips_to_JSON(){
+        global $data;
+        $json = json_encode($data, JSON_PRETTY_PRINT);
+        return $json;
+    }
     
 ?>
 
@@ -152,7 +158,7 @@
                     <?php endif ?>
                 </div>
             <?php endforeach ?>
-
+            <a href="json.php" class="btn">Print Trips as JSON</a>
         </div>
     </div>
 
