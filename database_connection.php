@@ -2,4 +2,4 @@
     $dbserver = "localhost";
     $dbuser = "afe2xd";
     $dbpass = "FxzfqPxtRDV6";
-    $dbdatabase = "project";
+    $dbdatabase = "afe2xd";

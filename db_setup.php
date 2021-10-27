@@ -3,7 +3,7 @@
     /** SETUP **/
     include('database_connection.php');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
-    $mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
+    $db = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
     
     $db->query("drop table if exists user;");
     $db->query("create table user (
