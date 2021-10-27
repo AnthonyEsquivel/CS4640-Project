@@ -136,7 +136,7 @@ if (isset($_POST["email"])) { /// validate the email coming in
             <nav>
                 <a href=index.html>Home</a>
                 <a href=calendar.html>Calendar</a>
-                <a href=trips.html>Trips</a>
+                <a href=trips.php>Trips</a>
                 <a href=resources.html>Resources</a>
                 <a href=join.html>Join</a>
             </nav>
