@@ -22,22 +22,25 @@ if(isset($_POST["experience"])){
         $experience_string .= $element . " ";
 }
 
-// user was not found, create an account
-$insert = $mysqli->prepare("update user set name = ?, uid = ?, is_driver = ?, experience = ?, num_pads = ?, num_passengers = ?, has_gear = ? where email = ?;"); //add elements to database
-$insert->bind_param("ssssiiss", $_POST["name"], $_POST["uid"], $_POST["is_driver"], $experience_string, $_POST["num_pads"], $_POST["num_passengers"], $_POST["has_gear"], $_SESSION["email"]);
-if (!$insert->execute()) {
-    $error_msg = "Error creating new user";
-} 
+if(isset($_POST["name"])){
+    // user was not found, create an account
+    $insert = $mysqli->prepare("update user set name = ?, uid = ?, is_driver = ?, experience = ?, num_pads = ?, num_passengers = ?, has_gear = ? where email = ?;"); //add elements to database
+    $insert->bind_param("ssssiiss", $_POST["name"], $_POST["uid"], $_POST["is_driver"], $experience_string, $_POST["num_pads"], $_POST["num_passengers"], $_POST["has_gear"], $_SESSION["email"]);
+    if (!$insert->execute()) {
+        $error_msg = "Error creating new user";
+    } 
 
-// Save user information into the session to use later
-$_SESSION["name"] = $_POST["name"];
-$_SESSION["uid"] = $_POST["uid"];
-$_SESSION["is_driver"] = $_POST["is_driver"];
-$_SESSION["experience"] = $experience_string;
-$_SESSION["num_pads"] = $_POST["num_pads"];
-$_SESSION["num_passengers"] = $_POST["num_passengers"];
-$_SESSION["has_gear"] = $_POST["has_gear"];
+    // Save user information into the session to use later
+    $_SESSION["name"] = $_POST["name"];
+    $_SESSION["uid"] = $_POST["uid"];
+    $_SESSION["is_driver"] = $_POST["is_driver"];
+    $_SESSION["experience"] = $experience_string;
+    $_SESSION["num_pads"] = $_POST["num_pads"];
+    $_SESSION["num_passengers"] = $_POST["num_passengers"];
+    $_SESSION["has_gear"] = $_POST["has_gear"];
 
+    header("Location: trips.php");
+}
 // $check = $mysqli->;
 // if ($insert){
 //     header("Location: trips.php");

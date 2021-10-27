@@ -14,6 +14,21 @@
         exit();
     }
 
+    // See if user is registered
+    $stmt5 = $mysqli->prepare("select name from user where email = ?;");
+    $stmt5->bind_param("s", $_SESSION["email"]);
+    $stmt5->execute();      
+    $name_res = $stmt5->get_result();      
+    if ($name_res === false) {
+        die("MySQL database failed");
+    }
+    $name_data = $name_res->fetch_all(MYSQLI_ASSOC);
+    if ($name_data[0] == NULL) {
+        header("Location: register.php");
+    }
+
+
+
     $res = $mysqli->query("select * from trips");
     if ($res === false) {
         die("MySQL database failed");
