@@ -101,16 +101,16 @@ if(isset($_POST["name"])){
                     <form action="register.php" method="post">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="string" class="form-control" id="name" name="name"/>
+                            <input type="text" class="form-control" id="name" name="name"/>
                         </div>
                     
                         <div class="mb-3">
                             <label for="uid" class="form-label">UID</label>
-                            <input type="int" class="form-control" id="uid" name="uid"/>
+                            <input type="number" class="form-control" id="uid" name="uid"/>
                         </div>
                         <div class="mb-3">
                             <label for="is_driver" class="form-label">Can you drive?</label>
-                            <select type="boolean" class="form-control" id="is_driver" name="is_driver">
+                            <select type="text" class="form-control" id="is_driver" name="is_driver">
                                 <option value="yes">yes</option>
                                 <option value="no">no</option>
                             </select>
@@ -128,15 +128,15 @@ if(isset($_POST["name"])){
                         </div>
                         <div class="mb-3">
                             <label for="num_pads" class="form-label">How many pads can you fit in your vehicle?</label>
-                            <input type="int" class="form-control" id="num_pads" name="num_pads"/>
+                            <input type="number" class="form-control" id="num_pads" name="num_pads"/>
                         </div>
                         <div class="mb-3">
                             <label for="num_passengers" class="form-label">How many passengers can you fit?</label>
-                            <input type="int" class="form-control" id="num_passengers" name="num_passengers"/>
+                            <input type="number" class="form-control" id="num_passengers" name="num_passengers"/>
                         </div>
                         <div class="mb-3">
                             <label for="has_gear" class="form-label">Do you have your own camping gear?</label>
-                            <select type="boolean" class="form-control" id="has_gear" name="has_gear">
+                            <select type="text" class="form-control" id="has_gear" name="has_gear">
                                 <option value="true">yes</option>
                                 <option value="false">no</option>
                             </select>
