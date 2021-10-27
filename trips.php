@@ -27,8 +27,6 @@
         header("Location: register.php");
     }
 
-
-
     $res = $mysqli->query("select * from trips");
     if ($res === false) {
         die("MySQL database failed");
