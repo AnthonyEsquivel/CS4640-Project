@@ -15,17 +15,19 @@ $error_msg = "";
 // Join the session or start a new one
 session_start();
 
-$experience_string = ""; // used to turn array into string for db storage
-// Check if options are selected
-if(isset($_POST["experience"])){
-    foreach ($_POST["experience"] as $element)
-        $experience_string .= $element . " ";
+
+function getString($array){
+    $string = ""; // used to turn array into string for db storage
+    foreach($array as $element)
+        $string .= $element . " ";
+    return $string;
 }
 
+// Check if options are selected
 if(isset($_POST["name"])){
     // user was not found, create an account
     $insert = $mysqli->prepare("update user set name = ?, uid = ?, is_driver = ?, experience = ?, num_pads = ?, num_passengers = ?, has_gear = ? where email = ?;"); //add elements to database
-    $insert->bind_param("ssssiiss", $_POST["name"], $_POST["uid"], $_POST["is_driver"], $experience_string, $_POST["num_pads"], $_POST["num_passengers"], $_POST["has_gear"], $_SESSION["email"]);
+    $insert->bind_param("ssssiiss", $_POST["name"], $_POST["uid"], $_POST["is_driver"], getString($_POST["experience"]), $_POST["num_pads"], $_POST["num_passengers"], $_POST["has_gear"], $_SESSION["email"]);
     if (!$insert->execute()) {
         $error_msg = "Error creating new user";
     } 
