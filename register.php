@@ -4,10 +4,9 @@
 //Location: https://cs4640.cs.virginia.edu/afe2xd/hw4/
 
 /** DATABASE SETUP **/
-//include('../database_connection.php');
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // Extra Error Printing
-//$mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
-$mysqli = new mysqli("localhost", "root", "", "climbing_team"); // XAMPP Settings
+include('database_connection.php');
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
+$mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
 
 $error_msg = "";
 

@@ -1,8 +1,9 @@
 <?php
     
     /** SETUP **/
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $db = new mysqli("localhost", "root", "", "climbing_team"); // XAMPP Settings
+    include('database_connection.php');
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
+    $mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
     
     $db->query("drop table if exists user;");
     $db->query("create table user (

@@ -1,7 +1,7 @@
 <?php 
+    include('database_connection.php');
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
-    //$mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
-    $mysqli = new mysqli("localhost", "root", "", "climbing_team"); 
+    $mysqli = new mysqli($dbserver, $dbuser, $dbpass, $dbdatabase);
 
     $res = $mysqli->query("select * from trips");
     if ($res === false) {
