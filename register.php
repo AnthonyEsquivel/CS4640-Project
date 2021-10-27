@@ -15,13 +15,15 @@ $error_msg = "";
 // Join the session or start a new one
 session_start();
 
-$experience_string = ""; // used to turn array into string for db storage
-// Check if options are selected
-if(isset($_POST["experience"])){
-    foreach ($_POST["experience"] as $element)
-        $experience_string .= $element . " ";
+
+function getString($array){
+    $string = ""; // used to turn array into string for db storage
+    foreach($array as $element)
+        $string .= $element . " ";
+    return $string;
 }
 
+// Check if options are selected
 if(isset($_POST["name"])){
 
     $result = preg_match("/^[A-Za-z ]+$/",$_POST["name"]);
@@ -47,13 +49,9 @@ if(isset($_POST["name"])){
         $_SESSION["has_gear"] = $_POST["has_gear"];
 
         header("Location: trips.php");
-        }
+    }
 }
-// $check = $mysqli->;
-// if ($insert){
-//     header("Location: trips.php");
-//     exit();
-// }
+
 ?>
 
 <!DOCTYPE html>
