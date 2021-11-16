@@ -40,11 +40,25 @@
             <h2 class="card-title">Join Our Team!</h2>
             <p class="card-text">
                 Do you want to join a community of UVA students who share a passion for climbing? <br>
-                Subscribe to our listserv <a class="join-link"
-                    href="https://lists.virginia.edu/sympa/info/climbing">here</a> to keep updated! <br>
+                <!--Subscribe to our listserv <a class="join-link"
+                    href="https://lists.virginia.edu/sympa/info/climbing">here</a> to keep updated! <br> -->
                 Follow us on instagram <a class="join-link" href="https://www.instagram.com/climbingatuva/">here</a><br>
                 Contact Bailey or Sydney
             </p>
+            
+            <form id="info_form">
+                <div>
+                    <h4>Get Added to our Listserv</h4>
+                    <label for="name">Name:</label><br>
+                    <input type="text" class="form-control" id="name" name="name">
+                    <label for="email">Email:</label><br>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>   
+            </form>
+            <button class="btn btn-primary" onclick="addInfo()">Add</button>
+
+            <div id="confirm">
+            </div>
         </div>
     </div>
 
@@ -60,6 +74,19 @@
             <a href=join.html>Join</a>
         </nav>
     </footer>
+
+    <script>
+        function addInfo(){
+            var x = document.getElementById("info_form"); 
+
+            //anonymous function
+            (function() {
+                var display = "<p>Thanks " + x.elements[0].value + " you've been added to the listserv!</p>";
+                document.getElementById("confirm").innerHTML = display;
+            })();
+
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
