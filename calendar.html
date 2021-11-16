@@ -39,13 +39,14 @@
     <div class="card container col-12">
         <div class="card-body">
             <h2 class="card-title">Calendar</h2>
-            <iframe
+            <iframe id="calendar" 
                 title="calendar"
                 src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23f37023&ctz=America%2FNew_York&showTitle=1&showNav=1&showDate=1&showCalendars=1&mode=MONTH&title=Virginia%20Climbing%20Team%202021-2022&src=Y18wbTZrZDRwanU0b2YzbGM3MzlhdjZjMTZqMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F09300"
-                style="border:solid 1px #777" width="1000" height="600"></iframe>
-            <p>Click <a
-                    href="https://calendar.google.com/calendar/ical/c_0m6kd4pju4of3lc739av6c16j0%40group.calendar.google.com/public/basic.ics">here</a>
-                to subscribe.</p>
+                style="border:solid 1px #777" width="1000" height="600"></iframe><br>
+            <button onclick="document.getElementById('calendar').width = parseInt(document.getElementById('calendar').width) + 20; document.getElementById('calendar').height = parseInt(document.getElementById('calendar').height) + 12">increase size</button>
+            <button onclick="document.getElementById('calendar').width = parseInt(document.getElementById('calendar').width) - 20; document.getElementById('calendar').height = parseInt(document.getElementById('calendar').height) - 12">decrease size</button>
+            <br><br><p>Click <a href="https://calendar.google.com/calendar/ical/c_0m6kd4pju4of3lc739av6c16j0%40group.calendar.google.com/public/basic.ics">here</a>
+            to subscribe.</p>
         </div>
     </div>
 
