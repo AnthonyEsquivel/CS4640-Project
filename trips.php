@@ -150,7 +150,7 @@
         <div class="card-body">
             <h2 class="card-title">Trip Signup</h2>
             <h5>Signed in as <?= $user["name"] ?> </h5>
-            <a href="login.php" class="btn">Log out</a>
+            <a href="login.php" class="btn btn-danger">Log out</a>
             <?php foreach ($data as $trip): ?>
                 <div class="card-body">
                     <h3 class="card-title"><?= $trip['name'] ?></h3>
@@ -172,7 +172,7 @@
                     <?php endif ?>
                 </div>
             <?php endforeach ?>
-            <a href="json.php" class="btn">Print Trips as JSON</a>
+            <a href="json.php" class="btn btn-primary">Print Trips as JSON</a>
         </div>
     </div>
 
