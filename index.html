@@ -86,15 +86,17 @@
         <section class="container col-4">
             <div class="container card">
                 <div class="card-body popup">
-                    <h3 class="card-title exec-card-title">Our Exec Members</h3>
+                    <h3 id="exec" class="card-title exec-card-title">Our Exec Members</h3>
                     <h5>Presidents</h5>
-                    <p>Bailey Moro, Sydney Ploeger</p>
+                    <p id="1">Bailey Moro</p>
+                    <p id="2">Sydney Ploeger</p>
                     <br>
                     <h5>Treasurers</h5>
-                    <p>Alexa Borden, Tatiana Kennedy</p>
+                    <p id="3">Alexa Borden</p>
+                    <p id="4">Tatiana Kennedy</p>
                     <br>
                     <h5>Trip Leader</h5>
-                    <p>Iain Ramsey</p>
+                    <p id="5">Iain Ramsey</p>
                     <span class="popuptext">Elections take place every semester</span>
                 </div>
             </div>
@@ -115,6 +117,39 @@
             <a href=join.html>Join</a>
         </nav>
     </footer>
+
+    <style></style>
+
+    <script>
+
+        function Member(id, name, desc){
+            this.id = id;
+            this.name = name;
+            this.desc = desc;
+        }
+        
+        var b = new Member(1,"Bailey Moro: ", "Magic Mullet Man");
+        var s = new Member(2,"Sydney Ploeger: ", "Super Sick Sender");
+        var a = new Member(3,"Alexa Borden: ", "Crazy Cool Crusher");
+        var t = new Member(4,"Tati Kennedy: ", "Real Regal Runner");
+        var i = new Member(5,"Iain Ramsey: ", "Fantastic Fast Flasher");
+
+        document.getElementById("exec").addEventListener("click", displayDesc);
+
+        function displayDesc(){
+            document.getElementById("1").textContent = b.name + b.desc;
+            document.getElementById("2").textContent = s.name + s.desc;
+            document.getElementById("3").textContent = a.name + a.desc;
+            document.getElementById("4").textContent = t.name + t.desc;
+            document.getElementById("5").textContent = i.name + i.desc;
+
+            document.getElementById("exec").setAttribute('style', 'color: blue');
+
+            document.querySelector('style').innerHTML = '[class*="col-"] {width: 100% !important;} p {color: darkorange;}';
+            
+        }
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
