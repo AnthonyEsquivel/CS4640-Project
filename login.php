@@ -77,6 +77,10 @@ if (isset($_POST["email"])) { /// validate the email coming in
     }
 }
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -155,3 +159,25 @@ if (isset($_POST["email"])) { /// validate the email coming in
             crossorigin="anonymous"></script>
     </body>
 </html>
+
+<script>
+const emailInput = document.getElementById("email");
+const emailRegex = "^[A-Za-z0-9._%+-]+@virginia.edu$";
+emailInput.addEventListener("input", function (event) {
+  if (emailInput.validity.typeMismatch | !emailInput.value.match(emailRegex)) {
+    emailInput.setCustomValidity("That's not a valid UVA email address!");
+  } else {
+    emailInput.setCustomValidity("");
+  }
+});
+
+// const passwordInput = document.getElementById("password").value;
+// passwordInput.addEventListener("input", function (event) {
+//   if (passwordInput.length < 100) {
+//     passwordInput.setCustomValidity("Invalid password. ");
+//   } else {
+//     passwordInput.setCustomValidity("");
+//   }
+// });
+
+</script>
