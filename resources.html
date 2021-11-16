@@ -80,6 +80,7 @@
                         </tr>
                 </tbody>
             </table>
+            <button class="btn btn-primary" onclick="clearResources()">Clear Resources</button>
         </div>
     </div>
 
@@ -95,7 +96,7 @@
         </nav>
     </footer>
 
-    <script >
+    <script>
         function postResource(){
             // get the data from the form 
             var x = document.getElementById("resource_form"); 
@@ -126,6 +127,11 @@
         function loadResources(){
             var storedResources = JSON.parse(localStorage.getItem("sources"));
             document.getElementById("resources").innerHTML = storedResources;
+        }
+
+        function clearResources(){
+            localStorage.clear();
+            location.reload();
         }
     </script>
 

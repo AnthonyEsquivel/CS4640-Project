@@ -146,7 +146,7 @@
         </div>
     </nav> 
 
-    <div class="card container col-12">
+    <div class="card container col-12" id="main">
         <div class="card-body">
             <h2 class="card-title">Trip Signup</h2>
             <h5>Signed in as <?= $user["name"] ?> </h5>
@@ -172,7 +172,9 @@
                     <?php endif ?>
                 </div>
             <?php endforeach ?>
-            <a href="json.php" class="btn btn-primary">Print Trips as JSON</a>
+            <a  href="json.php" class="btn btn-primary">Print Trips as JSON</a>
+            <button id="displayTrips" class="btn btn-primary">View JSON Trips</button>
+
         </div>
     </div>
 
@@ -189,9 +191,35 @@
         </nav>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+        crossorigin="anonymous"></script>
+    <script> 
+
+        //JQuery and Ajax
+        $(document).ready(function(){
+            $("#displayTrips").click(function(){
+                $.get( "data.json", function( data ) {
+                var items = [];
+                $.each( data, function( val ) {
+                    items.push( "<li>" + this.name + "</li>" );
+                });
+                
+                $( "<ul/>", {
+                    "class": "my-new-list",
+                    html: items.join( "" )
+                }).appendTo( "#main" );
+                });  
+            });
+        });
+
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>

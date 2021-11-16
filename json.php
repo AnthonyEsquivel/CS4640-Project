@@ -11,6 +11,10 @@
     if (!isset($data[0])) {
         die("No trips in the database");
     }
+
+    $fp = fopen('data.json', 'w');
+    fwrite($fp, json_encode($data));
+    fclose($fp);
     
     $json = json_encode($data, JSON_PRETTY_PRINT);
 
