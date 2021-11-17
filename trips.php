@@ -201,7 +201,7 @@
                 $.get( "data.json", function( data ) {
                 var items = [];
                 $.each( data, function( val ) {
-                    items.push( "<li>" + this.name + "</li>" );
+                    items.push( "<li>" + this.name +": " + this.description + "</li>" );
                 });
                 
                 $( "<ul/>", {
