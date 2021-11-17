@@ -104,7 +104,7 @@
             
             let transaction = (a, b, c) => "<tr><td>" + a + "</td><td>" + b + "</td><td>" + c + "</td></tr>";
             
-            var row = transaction(x.elements[0].value, x.elements[1].value, x.elements[2].value)
+            var row = transaction(x.elements[0].value, x.elements[1].value, "<a href='" + x.elements[2].value + "'>" + x.elements[2].value + "</a>")
             // construct a transaction with fields from form
             // var row = "<tr>";
             // row += "<td>" + x.elements[0].value + "</td>";
