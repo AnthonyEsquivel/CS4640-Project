@@ -1,1 +1,26 @@
-[{"id":"1","name":"The New River Gorge trip","location":"Fayettville, Wv","type":"lead\/toprope\/boulder","description":"Week longao giaghoahpgapudfhasdfh","dates":"9\/10-9\/13"},{"id":"2","name":"Crimpers Comp (USAC)","location":"Christiansburg, VA","type":"boulder","description":"come to the new with us!","dates":"9\/10-9\/13"}]
+[
+    {
+        "id": "1",
+        "name": "The New River Gorge trip",
+        "location": "Fayettville, WV",
+        "type": "lead\/toprope\/boulder",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "dates": "9\/10-9\/13"
+    },
+    {
+        "id": "2",
+        "name": "Crimpers Comp (USAC)",
+        "location": "Christiansburg, VA",
+        "type": "boulder",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "dates": "9\/10-9\/13"
+    },
+    {
+        "id": "3",
+        "name": "Slaughter Competition",
+        "location": "Charlottesville, VA",
+        "type": "boulder",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "dates": "11\/2"
+    }
+]

@@ -12,9 +12,11 @@
         die("No trips in the database");
     }
 
-    $fp = fopen('data.json', 'w');
-    fwrite($fp, json_encode($data));
-    fclose($fp);
+    //$fp = fopen('data.json', 'w');
+    //fwrite($fp, json_encode($data));
+    //fclose($fp);
+    
+    @file_put_contents("data.json", json_encode($data));
     
     $json = json_encode($data, JSON_PRETTY_PRINT);
 
