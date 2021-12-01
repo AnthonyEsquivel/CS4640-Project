@@ -1,0 +1,104 @@
+<p>Coffee: </p>
+
+<p>Drink Desc: </p>
+
+<p>Drink Model: </p>
+
+<form #orderForm="ngForm" (ngSubmit)="submitForm(orderForm.value)">
+    <div class="mb-3">
+        <label for="description" class="form-label">Drink Description</label>
+        <input [(ngModel)]="drink.description"
+            type="text" class="form-control" name="description" placeholder="ex: Pumpkin Spice Latte"/>
+    </div>
+    <div class="mb-3">
+        <label for="size" class="form-label">Size</label>
+        <select [(ngModel)]="drink.size"
+                class="form-select" name="size">
+            <option *ngFor="let size of sizes"></option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="temp" class="form-label">Temperature</label>
+        <select [(ngModel)]="drink.temp"
+                class="form-select" name="temp">
+            <option *ngFor="let temp of temps"></option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input [(ngModel)]="drink.name"
+            required
+            #name="ngModel"
+            minlength="4" maxlength="100"
+            [class.is-invalid] = "name.invalid && name.touched"
+            type="text" class="form-control" name="name"/>
+        <small class="text-danger" 
+                [class.d-none]= "name.valid || name.untouched">
+                Name is required</small>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input [(ngModel)]="drink.email"
+            required
+            #email="ngModel"
+            [class.is-invalid] = "email.invalid && email.touched"
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,10})$"
+            type="email" class="form-control" name="email" placeholder="Your contact email"/>        
+        <small class="text-danger" 
+                [class.d-none]= "email.valid || email.untouched">
+                Email is required</small>
+        
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" 
+            [disabled]="!orderForm.form.valid"
+            (click)="placeOrder()">
+            Add Item
+        </button>
+    </div>
+</form>
+
+<p>Description from form: </p>
+
+<p>Entire form: </p>
+
+<p style="color: blue;"></p>
+
+<hr>
+
+<h4>Your Orders</h4>
+
+<p></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Drink</th>
+            <th>Temp</th>
+            <th>Size</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="mb-3">
+    <button class="btn btn-success" 
+        [disabled]="orders.length == 0"
+        (click)="sendOrder()">
+        Send Order
+    </button>
+</div>
+
+<hr>
+
+<p> PHP Response:  </p>
+
+<p> Order time:  </p>
