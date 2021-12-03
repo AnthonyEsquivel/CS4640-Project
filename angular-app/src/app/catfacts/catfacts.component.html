@@ -1,0 +1,13 @@
+
+<div class="mb-3">
+    <form>
+        <h1>Cat Facts</h1>
+        <label for="fact" class="form-label">Type Fact Here:</label>
+        <input #fact type="text" class="form-control" name="fact">
+        <button class="btn btn-primary" (click)=addFact(fact.value)>Add</button>
+    </form>
+</div>
+
+<ul>
+    <li *ngFor="let fact of allFacts" [ngStyle]="{'color': 'blue'}" [ngClass]="'listItem'">{{fact}}</li>
+</ul>
