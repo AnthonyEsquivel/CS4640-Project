@@ -25,7 +25,7 @@ export class CatfactsComponent implements OnInit {
   response: any;
   sendOrder(): void {
     let json:string = JSON.stringify(this.facts)
-    this.http.post("http://localhost/CS4640-project/facts.php", json).subscribe(
+    this.http.post("https://cs4640.cs.virginia.edu/afe2xd/project/facts.php", json).subscribe(
         (respData) =>  { this.response = respData; },
         (error) => { console.log("Error: ", error); }
     );
