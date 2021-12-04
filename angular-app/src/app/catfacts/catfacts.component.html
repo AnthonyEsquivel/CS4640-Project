@@ -8,6 +8,12 @@
     </form>
 </div>
 
+<div class="mb-3">
+    <button class="btn btn-success" (click)="sendOrder()">Send Facts </button>
+</div>
+
 <ul>
     <li *ngFor="let fact of allFacts" [ngStyle]="{'color': 'blue'}" [ngClass]="'listItem'">{{fact}}</li>
 </ul>
+
+<p>PHP Response: {{ response | json }}</p>
